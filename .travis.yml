@@ -16,11 +16,11 @@ script:
   image=azuresdk-a01-droid:java-$TRAVIS_BUILD_NUMBER
   docker build --pull -t $image -f Dockerfile .
   docker images
-#  docker login libtest.azurecr.io -u $AZURESDKDEV_ACR_SP_USERNAME -p $AZURESDK_ACR_SP_PASSWORD
-#  docker tag azuresdk-a01-droid:java-$TRAVIS_BUILD_NUMBER libtest.azurecr.io/azuresdk-a01-droid:java-$TRAVIS_TAG
-#  docker tag azuresdk-a01-droid:java-$TRAVIS_BUILD_NUMBER libtest.azurecr.io/azuresdk-a01-droid:java-latest
-#  docker push libtest.azurecr.io/azuresdk-a01-droid:java-$TRAVIS_TAG
-#  docker push libtest.azurecr.io/azuresdk-a01-droid:java-latest
+  docker login libtest.azurecr.io -u $AZURESDKDEV_ACR_SP_USERNAME -p $AZURESDK_ACR_SP_PASSWORD
+  docker tag azuresdk-a01-droid:java-$TRAVIS_BUILD_NUMBER libtest.azurecr.io/azuresdk-a01-droid:java-$TRAVIS_TAG
+  docker tag azuresdk-a01-droid:java-$TRAVIS_BUILD_NUMBER libtest.azurecr.io/azuresdk-a01-droid:java-latest
+  docker push libtest.azurecr.io/azuresdk-a01-droid:java-$TRAVIS_TAG
+  docker push libtest.azurecr.io/azuresdk-a01-droid:java-latest
 
 #script:
 #- |-
