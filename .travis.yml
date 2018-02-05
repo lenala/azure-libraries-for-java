@@ -36,6 +36,7 @@ script:
   docker push libtest.azurecr.io/azuresdk-a01-droid:java-$TRAVIS_TAG
   docker push libtest.azurecr.io/azuresdk-a01-droid:java-latest
 
+
 #script:
 #- |-
 #  if [ ${TRAVIS_EVENT_TYPE} = "push" -o ${TRAVIS_EVENT_TYPE} = "pull_request" ]; then
