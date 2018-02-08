@@ -1,4 +1,2 @@
-{
-    "path": "azure",
-    "path": "azure-mgmt-appservice"
-}
+[{"path": "azure"},
+{"path": "azure-mgmt-appservice"}]
