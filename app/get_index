@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [ -e /app/test_index ]; then
-    echo /app/test_index
+    cat /app/test_index
     exit 0
 else
     echo "Missing test_index file." >&2
