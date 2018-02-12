@@ -6,6 +6,8 @@ LABEL a01.index.schema="v2"
 COPY . /azure-libraries-for-java
 COPY ./app /app
 
+RUN mvn install -DskipTests=true -f /azure-libraries-for-java/pom.xml
+
 ENV PATH /usr/local/bin:$PATH
 
 # http://bugs.python.org/issue19846
