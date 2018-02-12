@@ -6,7 +6,7 @@ LABEL a01.index.schema="v2"
 COPY . /azure-libraries-for-java
 COPY ./app /app
 
-RUN mvn install -DskipTests=true -f /azure-libraries-for-java/pom.xml
+RUN mvn install -DskipTests=true -f /azure-libraries-for-java/pom.xml -q
 
 ENV PATH /usr/local/bin:$PATH
 
