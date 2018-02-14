@@ -52,14 +52,19 @@ public class InterceptorManager {
     public static InterceptorManager create(String testName, TestBase.TestMode testMode) throws IOException {
         InterceptorManager interceptorManager = new InterceptorManager(testName, testMode);
         SdkContext.setResourceNamerFactory(new TestResourceNamerFactory(interceptorManager));
-        SdkContext.setDelayProvider(new TestDelayProvider(interceptorManager.isRecordMode()));
-        SdkContext.setRxScheduler(Schedulers.trampoline());
-
+        SdkContext.setDelayProvider(new TestDelayProvider(interceptorManager.isRecordMode() || interceptorManager.isNoneMode()));
+        if (!interceptorManager.isNoneMode()) {
+            SdkContext.setRxScheduler(Schedulers.trampoline());
+        }
         return interceptorManager;
     }
 
     public boolean isRecordMode() {
         return testMode == TestBase.TestMode.RECORD;
+    }
+
+    public boolean isNoneMode() {
+        return testMode == TestBase.TestMode.NONE;
     }
 
     public boolean isPlaybackMode() {
@@ -84,6 +89,15 @@ public class InterceptorManager {
                         return playback(chain);
                     }
                 };
+            case NONE:
+                // do nothing
+                return new Interceptor() {
+                    @Override
+                    public Response intercept(Chain chain) throws IOException {
+                        Request request = chain.request();
+                        return chain.proceed(request);
+                    }
+                };
             default:
                 System.out.println("==> Unknown AZURE_TEST_MODE: " + testMode);
         };
@@ -96,6 +110,7 @@ public class InterceptorManager {
                 writeDataToFile();
                 break;
             case PLAYBACK:
+            case NONE:
                 // Do nothing
                 break;
             default:
