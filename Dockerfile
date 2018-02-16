@@ -13,3 +13,5 @@ COPY . /azure-libraries-for-java
 COPY ./app /app
 
 RUN mvn install -DskipTests=true -f /azure-libraries-for-java/pom.xml -Dmaven.repo.local=/repository
+
+CMD /app/a01droid
