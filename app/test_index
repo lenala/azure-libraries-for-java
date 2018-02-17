@@ -1,44 +1,440 @@
-[{"path": "azure"},
-{"path": "azure-samples"},
-{"path": "azure-mgmt-appservice"},
-{"path": "azure-mgmt-batch"},
-{"path": "azure-mgmt-batchai"},
-{"path": "azure-mgmt-billing"},
-{"path": "azure-mgmt-cdn"},
-{"path": "azure-mgmt-cognitiveservices"},
-{"path": "azure-mgmt-compute"},
-{"path": "azure-mgmt-consumption"},
-{"path": "azure-mgmt-containerinstance"},
-{"path": "azure-mgmt-containerregistry"},
-{"path": "azure-mgmt-containerservice"},
-{"path": "azure-mgmt-cosmosdb"},
-{"path": "azure-mgmt-customerinsights"},
-{"path": "azure-mgmt-datalake-analytics"},
-{"path": "azure-mgmt-datalake-store"},
-{"path": "azure-mgmt-devices"},
-{"path": "azure-mgmt-devtestlab"},
-{"path": "azure-mgmt-dns"},
-{"path": "azure-mgmt-eventhub"},
-{"path": "azure-mgmt-graph-rbac"},
-{"path": "azure-mgmt-insights"},
-{"path": "azure-mgmt-keyvault"},
-{"path": "azure-mgmt-logic"},
-{"path": "azure-mgmt-locks"},
-{"path": "azure-mgmt-machinelearning"},
-{"path": "azure-mgmt-monitor"},
-{"path": "azure-mgmt-network"},
-{"path": "azure-mgmt-notificationhubs"},
-{"path": "azure-mgmt-powerbi"},
-{"path": "azure-mgmt-recoveryservices"},
-{"path": "azure-mgmt-redis"},
-{"path": "azure-mgmt-relay"},
-{"path": "azure-mgmt-resources"},
-{"path": "azure-mgmt-scheduler"},
-{"path": "azure-mgmt-search"},
-{"path": "azure-mgmt-servicebus"},
-{"path": "azure-mgmt-servicefabric"},
-{"path": "azure-mgmt-sql"},
-{"path": "azure-mgmt-storage"},
-{"path": "azure-mgmt-streamanalytics"},
-{"path": "azure-mgmt-trafficmanager"},
-{"path": "azure-mgmt-msi"}]
+[{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-samples -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-samples",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-appservice -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-appservice",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-batch -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-batch",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-batchai -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-batchai",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-billing -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-billing",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-cdn -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-cdn",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-cognitiveservices -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-cognitiveservices",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-compute -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-compute",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-consumption -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-consumption",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-containerinstance -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-containerinstance",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-containerregistry -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-containerregistry",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-containerservice -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-containerservice",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-cosmosdb -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-cosmosdb",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-customerinsights -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-customerinsights",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-datalake-analytics -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-datalake-analytics",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-datalake-store -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-datalake-store",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-devices -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-devices",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-devtestlab -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-devtestlab",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-dns -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-dns",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-eventhub -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-eventhub",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-graph-rbac -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-graph-rbac",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-insights -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-insights",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-keyvault -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-keyvault",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-logic -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-logic",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-locks -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-locks",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-machinelearning -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-machinelearning",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-monitor -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-monitor",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-network -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-network",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-notificationhubs -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-notificationhubs",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-powerbi -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-powerbi",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-recoveryservices -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-recoveryservices",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-redis -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-redis",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-relay -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-relay",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-resources -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-resources",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-scheduler -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-scheduler",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-search -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-search",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-servicebus -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-servicebus",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-servicefabric -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-servicefabric",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-sql -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-sql",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-storage -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-storage",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-streamanalytics -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-streamanalytics",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-trafficmanager -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-trafficmanager",
+      "type": "Unit"
+    }
+  },
+{"ver": "1.0",
+    "execution": {
+      "command": "mvn test -f azure-libraries-for-java/pom.xml --fail-at-end -pl azure-mgmt-msi -Dorg.slf4j.simpleLogger.defaultLogLevel=error -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn --batch-mode -Dparallel=classes -DthreadCount=2 -DforkCount=1C",
+      "recording": null
+    },
+    "classifier": {
+      "identifier": "azure-mgmt-msi",
+      "type": "Unit"
+    }
+}]
