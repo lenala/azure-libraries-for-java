@@ -242,7 +242,6 @@ public class AzureTests extends TestBase {
      */
     @Test
     public void testManagementLocks() throws Exception {
-        Assert.assertEquals(1, 0);
         // Prepare a VM
         final String password = SdkContext.randomResourceName("P@s", 14);
         final String rgName = SdkContext.randomResourceName("rg", 15);
