@@ -10,9 +10,6 @@ before_script:
 - sleep 5
 script:
 - |-
-  ./ci/run_tests.sh || travis_terminate 1 ;
-  if [[ $TRAVIS_PULL_REQUEST == “false” ]] && [[ $TRAVIS_BRANCH == “master” ]] && [[ ${TRAVIS_JDK_VERSION} = "oraclejdk8" ]]; then
-    ./ci/create_image.sh ;
+  if [[ $TRAVIS_PULL_REQUEST == “false” ]] && [[ ${TRAVIS_JDK_VERSION} = "oraclejdk8" ]]; then
+    echo "condition met"
   fi
-  #  if [ ${TRAVIS_BRANCH} = "master"]  && [ ${TRAVIS_JDK_VERSION} = "oraclejdk8" ] && [ ${TRAVIS_PULL_REQUEST} = "false" ]; then
-
