@@ -1,4 +1,7 @@
-#############################################
+#!/usr/bin/env bash
+
+set -e
+# ###########################################
 # Define colored output func
 function title {
     LGREEN='\033[1;32m'

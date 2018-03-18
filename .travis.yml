@@ -10,8 +10,7 @@ before_script:
 - sleep 5
 script:
 - |-
-  result=./ci/run_tests.sh
-  echo result
+  ./ci/run_tests.sh
   if [ ${TRAVIS_BRANCH} = "master"]  && [ ${TRAVIS_JDK_VERSION} = "oraclejdk8" ] && [ ${TRAVIS_PULL_REQUEST} = "false" ]; then
     ./ci/create_image.sh ;
   fi
