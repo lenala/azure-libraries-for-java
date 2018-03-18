@@ -10,6 +10,6 @@ before_script:
 - sleep 5
 script:
 - |-
-  if [[ $TRAVIS_PULL_REQUEST == “false” ]] && [[ ${TRAVIS_JDK_VERSION} = "oraclejdk8" ]]; then
+  if [[ $TRAVIS_PULL_REQUEST == "false" ]] && [[ ${TRAVIS_JDK_VERSION} = "oraclejdk8" ]]; then
     echo "condition met"
   fi
