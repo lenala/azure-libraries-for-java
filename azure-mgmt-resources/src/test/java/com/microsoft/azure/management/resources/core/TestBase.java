@@ -185,11 +185,18 @@ public abstract class TestBase {
                 final File credFile = new File(System.getenv("AZURE_AUTH_LOCATION"));
                 credentials = ApplicationTokenCredentials.fromFile(credFile);
             } else {
-                credentials = new ApplicationTokenCredentials(System.getenv("AZURE_CLIENT_ID"), System.getenv("AZURE_TENANT_ID"),
-                        System.getenv("AZURE_CLIENT_SECRET"), AzureEnvironment.AZURE);
-                credentials.withDefaultSubscriptionId(System.getenv("AZURE_SUBSCRIPTION_ID"));
+                String clientId = System.getenv("AZURE_CLIENT_ID");
+                String tenantId = System.getenv("AZURE_TENANT_ID");
+                String clientSecret = System.getenv("AZURE_CLIENT_SECRET");
+                String subscriptionId = System.getenv("AZURE_SUBSCRIPTION_ID");
+                if (clientId == null || tenantId == null || clientSecret == null || subscriptionId == null) {
+                    throw new IllegalArgumentException("When running tests in record mode either 'AZURE_AUTH_LOCATION' or 'AZURE_CLIENT_ID, AZURE_TENANT_ID, AZURE_CLIENT_SECRET and AZURE_SUBSCRIPTION_ID' needs to be set");
+                }
+
+                credentials = new ApplicationTokenCredentials(clientId, tenantId, clientSecret, AzureEnvironment.AZURE);
+                credentials.withDefaultSubscriptionId(subscriptionId);
             }
-            restClient = buildRestClient(new RestClient.Builder()
+            RestClient.Builder builder = new RestClient.Builder()
                             .withBaseUrl(this.baseUri())
                             .withSerializerAdapter(new AzureJacksonAdapter())
                             .withResponseBuilderFactory(new AzureResponseBuilder.Factory())
@@ -197,11 +204,11 @@ public abstract class TestBase {
                             .withCredentials(credentials)
                             .withLogLevel(LogLevel.NONE)
                             .withReadTimeout(3, TimeUnit.MINUTES)
-                            .withNetworkInterceptor(new LoggingInterceptor(LogLevel.BODY_AND_HEADERS))
-                            .withNetworkInterceptor(interceptorManager.initInterceptor())
-                            .withInterceptor(new ResourceManagerThrottlingInterceptor())
-                    , false);
-
+                            .withNetworkInterceptor(new LoggingInterceptor(LogLevel.BODY_AND_HEADERS));
+            if (!interceptorManager.isNoneMode()) {
+                builder.withNetworkInterceptor(interceptorManager.initInterceptor());
+            }
+            restClient = buildRestClient(builder.withInterceptor(new ResourceManagerThrottlingInterceptor()),false);
             defaultSubscription = credentials.defaultSubscriptionId();
             interceptorManager.addTextReplacementRule(defaultSubscription, ZERO_SUBSCRIPTION);
             interceptorManager.addTextReplacementRule(credentials.domain(), ZERO_TENANT);

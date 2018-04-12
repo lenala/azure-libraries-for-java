@@ -23,6 +23,7 @@ import com.microsoft.azure.management.network.Access;
 import com.microsoft.azure.management.network.ConnectivityCheck;
 import com.microsoft.azure.management.network.Direction;
 import com.microsoft.azure.management.network.FlowLogSettings;
+import com.microsoft.azure.management.network.IpFlowProtocol;
 import com.microsoft.azure.management.network.Network;
 import com.microsoft.azure.management.network.NetworkSecurityGroup;
 import com.microsoft.azure.management.network.NetworkWatcher;
@@ -31,7 +32,6 @@ import com.microsoft.azure.management.network.NextHopType;
 import com.microsoft.azure.management.network.PacketCapture;
 import com.microsoft.azure.management.network.PcProtocol;
 import com.microsoft.azure.management.network.PcStatus;
-import com.microsoft.azure.management.network.Protocol;
 import com.microsoft.azure.management.network.SecurityGroupView;
 import com.microsoft.azure.management.network.Subnet;
 import com.microsoft.azure.management.network.Topology;
@@ -684,7 +684,7 @@ public class AzureTests extends TestBase {
         VirtualMachine[] virtualMachines = tnw.ensureNetwork(azure.networkWatchers().manager().networks(),
                 azure.virtualMachines(), azure.networkInterfaces());
 
-        Topology topology = nw.getTopology(virtualMachines[0].resourceGroupName());
+        Topology topology = nw.topology().withTargetResourceGroup(virtualMachines[0].resourceGroupName()).execute();
         Assert.assertEquals(11, topology.resources().size());
         Assert.assertTrue(topology.resources().containsKey(virtualMachines[0].getPrimaryNetworkInterface().networkSecurityGroupId()));
         Assert.assertEquals(4, topology.resources().get(virtualMachines[0].primaryNetworkInterfaceId()).associations().size());
@@ -716,7 +716,7 @@ public class AzureTests extends TestBase {
         VerificationIPFlow verificationIPFlow = nw.verifyIPFlow()
                 .withTargetResourceId(virtualMachines[0].id())
                 .withDirection(Direction.OUTBOUND)
-                .withProtocol(Protocol.TCP)
+                .withProtocol(IpFlowProtocol.TCP)
                 .withLocalIPAddress("10.0.0.4")
                 .withRemoteIPAddress("8.8.8.8")
                 .withLocalPort("443")
@@ -757,7 +757,7 @@ public class AzureTests extends TestBase {
         Assert.assertEquals("Reachable", connectivityCheck.connectionStatus().toString());
 
         azure.virtualMachines().deleteById(virtualMachines[1].id());
-        topology.refresh();
+        topology.execute();
         Assert.assertEquals(10, topology.resources().size());
 
         azure.resourceGroups().deleteByName(nw.resourceGroupName());
@@ -796,6 +796,7 @@ public class AzureTests extends TestBase {
      * @throws Exception
      */
     @Test
+    @Ignore("osDiskSize is returned as 127 instead of 128 - known service bug")
     public void testVirtualMachines() throws Exception {
         // Future: This method needs to have a better specific name since we are going to include unit test for
         // different vm scenarios.
@@ -925,7 +926,7 @@ public class AzureTests extends TestBase {
 
     @Test
     public void testBatchAI() throws Exception {
-        new TestBatchAI.Basic(azure.storageAccounts()).runTest(azure.batchAIClusters(), azure.resourceGroups());
+        new TestBatchAI.Basic(azure.storageAccounts(), azure.networks()).runTest(azure.batchAIClusters(), azure.resourceGroups());
     }
 
     @Test
@@ -935,7 +936,7 @@ public class AzureTests extends TestBase {
 
     @Test
     public void testBatchAIFileServer() throws Exception {
-        new TestBatchAIFileServers().runTest(azure.batchAIFileServers(), azure.resourceGroups());
+        new TestBatchAIFileServers(azure.networks()).runTest(azure.batchAIFileServers(), azure.resourceGroups());
     }
 
     @Test
@@ -980,10 +981,11 @@ public class AzureTests extends TestBase {
     }
 
     @Test
-    @Ignore("QuotaExceeded error: Public preview limit of 5 for managed cluster(AKS) has been reached for subscription sub-id in location ukwest. Same error even after deleting all clusters")
     public void testKubernetesCluster() throws Exception {
-        new TestKubernetesCluster()
-            .runTest(azure.kubernetesClusters(), azure.resourceGroups());
+        if (isPlaybackMode()) {
+            new TestKubernetesCluster()
+                .runTest(azure.kubernetesClusters(), azure.resourceGroups());
+        }
     }
 
     @Test
